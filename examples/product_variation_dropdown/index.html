@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Variation Dropdown</title>
+</head>
+<body>
+<div>
+  <h1>Shirt</h1>
+  <select id="variation-select" name="variation_select">
+    <option selected="" disabled="">Select</option>
+    <option
+      value="small"
+      data-product-variation-title="small"
+      data-id="1"
+      data-price="2000"
+    >
+      Shirt (small) - $20.00
+    </option>
+    <option
+      value="medium"
+      data-product-variation-title="medium"
+      data-id="2"
+      data-price="2000"
+    >
+      Shirt (medium) - $20.00
+    </option>
+    <option
+      value="large"
+      data-product-variation-title="large"
+      data-id="3"
+      data-price="2000"
+    >
+      Shirt (large) - $20.00
+    </option>
+  </select>
+  <div class="add-to-cfart-button-container">
+    <button
+      id="add-to-cart-button" 
+      class="button button-red button-add-to-cart add-to-cart" 
+      data-product-title="Shirt" 
+      data-aerostat-id="1" 
+      data-quantity="1" 
+    >
+      <span>Add to Cart</span>
+    </button>
+  </div>
+</div>
+<script src="../../dist/addToCartButton.bundle.js"></script>
+<script src="./example.js"></script>
+</body>
+</html>
