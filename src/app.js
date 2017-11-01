@@ -37,7 +37,7 @@
         usd: dataset.price
       },
       type: dataset.type || 'item',
-      product_plan: {
+      product_plan: { //this is just for front end cart and will be omitted on checkout
         name: dataset.name,
         amount: dataset.amount,
         interval: dataset.interval,
