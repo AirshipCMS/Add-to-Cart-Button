@@ -44,7 +44,7 @@ quantity                |int      |optional. default is 1. can't be > 1 for type
 ---|---|---|---
 name                    |string   |required. for type plan                                                	   |data-name
 ---|---|---|---
-amount                  |string   |TODO: check if this is needed                                          	   |data-amount
+amount                  |string   |required                                          	                       |data-amount
 ---|---|---|---
 interval                |string   |required. for type plan                                                	   |data-interval
 ---|---|---|---

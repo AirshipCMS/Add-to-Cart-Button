@@ -1,12 +1,10 @@
 (() => {
-  const addToCartButton = document.getElementById('add-to-cart-button'),
+  const addToCartButton = document.querySelectorAll('[data-aerostat-id'),
         requiredProductData = ['aerostatId', 'id', 'productTitle', 'productVariationTitle', 'price'],
         requiredPlanData = ['aerostatId', 'id', 'productTitle', 'name', 'amount', 'interval'];
   let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : { items: [] };
   
-  if(addToCartButton) {
-    addToCartButton.addEventListener('click', validateDataset);
-  }
+  Array.prototype.slice.call(addToCartButton).forEach((el) => el.onclick = validateDataset);
 
   function validateDataset() {
     let isValid = true,
