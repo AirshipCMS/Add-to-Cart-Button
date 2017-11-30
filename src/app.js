@@ -1,7 +1,7 @@
 (() => {
   const addToCartButton = document.querySelectorAll('button[data-aerostat-id'),
         requiredProductData = ['aerostatId', 'id', 'productTitle', 'productVariationTitle', 'price'],
-        requiredPlanData = ['aerostatId', 'id', 'productTitle', 'name', 'amount', 'interval'];
+        requiredPlanData = ['aerostatId', 'id', 'productTitle', 'name', 'price', 'interval'];
   let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : { items: [] };
   
   Array.prototype.slice.call(addToCartButton).forEach((el) => el.onclick = validateDataset);
@@ -37,11 +37,11 @@
       type: dataset.type || 'item',
       product_plan: { //this is just for front end cart and will be omitted on checkout
         name: dataset.name,
-        amount: dataset.amount,
         interval: dataset.interval,
         interval_count: dataset.interval_count,
         trial_days: dataset.trialDays || 0
-      }
+      },
+      has_no_shipments: false
     }
 
     if(cart.items.length > 0) {
