@@ -41,7 +41,7 @@
         interval_count: dataset.interval_count,
         trial_days: dataset.trialDays || 0
       },
-      has_no_shipments: false
+      has_no_shipments: dataset.hasNoShipments || false
     }
 
     if(cart.items.length > 0) {
