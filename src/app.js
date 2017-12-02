@@ -25,6 +25,8 @@
   }
 
   function addToCart(dataset) {
+    if(dataset.hasNoShipments) let hasNoShipments = JSON.parse(dataset.hasNoShipments);
+
     let cartItem = {
       aerostat_id: dataset.aerostatId,
       id: dataset.id,
@@ -41,7 +43,7 @@
         interval_count: dataset.interval_count,
         trial_days: dataset.trialDays || 0
       },
-      has_no_shipments: dataset.hasNoShipments || false
+      has_no_shipments: hasNoShipments || false
     }
 
     if(cart.items.length > 0) {
