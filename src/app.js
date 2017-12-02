@@ -25,7 +25,8 @@
   }
 
   function addToCart(dataset) {
-    if(dataset.hasNoShipments) let hasNoShipments = JSON.parse(dataset.hasNoShipments);
+    let hasNoShipments;
+    if(dataset.hasNoShipments) hasNoShipments = JSON.parse(dataset.hasNoShipments);
 
     let cartItem = {
       aerostat_id: dataset.aerostatId,
