@@ -20,7 +20,7 @@ This will run webpack-dev-server on port `9000`.
 
 run `yarn build`
 
-this will build/minify the `src/app.js` to `dist/addToCartButton.bundle.js`
+this will build/minify the `src/app.js` to `dist/addToCartButton.min.js`
 
 ### Cart Item
 

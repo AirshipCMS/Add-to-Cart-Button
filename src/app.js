@@ -60,7 +60,7 @@
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     if(cartCounter) {
-      updateCartCount(dataset);
+      window.updateCartCount(dataset);
     }
   }
 })();
