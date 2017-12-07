@@ -1,5 +1,6 @@
 (() => {
   const addToCartButton = document.querySelectorAll('button[data-aerostat-id'),
+        cartCounter = document.getElementById("nav-cart-counter"),
         requiredProductData = ['aerostatId', 'id', 'productTitle', 'productVariationTitle', 'price'],
         requiredPlanData = ['aerostatId', 'id', 'productTitle', 'name', 'price', 'interval'];
   let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : { items: [] };
@@ -58,5 +59,8 @@
       cart.items.push(cartItem);
     }
     localStorage.setItem('cart', JSON.stringify(cart));
+    if(cartCounter) {
+      updateCartCount(dataset);
+    }
   }
 })();
