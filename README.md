@@ -50,3 +50,27 @@ interval                |string   |required. for type plan                      
 ---|---|---|---
 interval_count          |int      |optional. default is 0                                                 	   |data-interval-count
 
+#### Misc Data
+
+If you'd like to add additional data to your cart item, you can do so by adding a misc data attribute.
+Add `data-misc-data-` followed by the name of your misc data property:
+
+```
+<button
+    data-misc-data-custom-label="I'm a custom label"
+    data-misc-data-sticker-type="die cut"
+>
+    Add to Cart
+</button>
+```
+
+The example above would add `misc_data` to your cart with the properties `custom_label` and `sticker_type`:
+
+```
+{
+	custom_label: "I'm a custom label",
+	sticker_type: "die cut"
+}
+```
+
+Any amount of items may be added to `misc_data`.

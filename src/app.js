@@ -11,10 +11,10 @@
     let isValid = true,
         invalidKey;
     let requiredData = this.dataset.type === 'plan' ? requiredPlanData : requiredProductData;
-    for(var value of requiredData) {
-      if(this.dataset[value] === null || this.dataset[value] === undefined || this.dataset[value] === "") {
+    for (const [key, value] of Object.entries(requiredData)) {
+      if(value === null || value === undefined || value === "") {
         isValid = false;
-        invalidKey = value;
+        invalidKey = key;
         break;
       }
     }
@@ -39,13 +39,27 @@
         usd: dataset.price
       },
       type: dataset.type || 'item',
-      product_plan: { //this is just for front end cart and will be omitted on checkout
+      product_plan: {
         name: dataset.name,
         interval: dataset.interval,
         interval_count: dataset.interval_count,
         trial_days: dataset.trialDays || 0
       },
       has_no_shipments: hasNoShipments || false
+    }
+
+    let misc_data = {};
+
+    for (const [key, value] of Object.entries(dataset)) {
+      if(key.includes('miscData')) {
+        let keyWithoutMiscData = key.split('miscData')[1];
+        let formattedKey = keyWithoutMiscData.charAt(0).toLowerCase() + keyWithoutMiscData.slice(1).replace(/([A-Z])/g, '_$1').trim().toLowerCase();
+        misc_data[formattedKey] = value;
+      }
+    }
+
+    if(Object.keys(misc_data).length > 0) {
+      cartItem['misc_data'] = misc_data;
     }
 
     if(cart.items.length > 0) {
