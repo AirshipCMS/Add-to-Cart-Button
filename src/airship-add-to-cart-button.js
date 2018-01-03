@@ -1,6 +1,6 @@
 (() => {
   const addToCartButton = document.querySelectorAll('button[data-aerostat-id'),
-        cartCounter = document.getElementById("nav-cart-counter"),
+        cartCounter = document.getElementsByClassName("airship-nav-cart-counter"),
         requiredProductData = ['aerostatId', 'id', 'productTitle', 'productVariationTitle', 'price'],
         requiredPlanData = ['aerostatId', 'id', 'productTitle', 'name', 'price', 'interval'];
   let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : { items: [] };
