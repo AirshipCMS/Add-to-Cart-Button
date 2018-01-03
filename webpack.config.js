@@ -3,10 +3,10 @@ const MinifyPlugin = require('babel-minify-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: './src/airship-add-to-cart-button.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'addToCartButton.min.js'
+    filename: 'airship-add-to-cart-button.min.js'
   },
   module: {
     rules: [
@@ -16,7 +16,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env', 'es2016']
+            presets: ['env']
           }
         }
       }

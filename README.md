@@ -1,4 +1,4 @@
-# Add to Cart
+# Add to Cart Button
 
 ## Development
 
@@ -10,17 +10,38 @@ yarn install
 
 ### How to Run
 
-run `yarn run dev`.
+run `yarn start`.
 
 This will run webpack-dev-server on port `9000`.
 
-`src/app.js` is the entry point.
+`src/airship-add-to-cart-button.js` is the entry point.
 
 ### Building
 
 run `yarn build`
 
-this will build/minify the `src/app.js` to `dist/addToCartButton.min.js`
+this will build/minify the `src/app.js` to `dist/airship-add-to-cart-button.min.js`
+
+
+### Usage
+
+In your airship project, add `airship-add-to-cart-button.min.js` to `compartments/assets/scripts/`.
+
+Include this script to the pages that needs an Add to Cart Button(s).
+
+Add the required data attributes to your button element.
+
+```
+<button
+    data-aerostat-id="1"
+    data-id="4"
+    data-product-title="Sticker"
+    data-product-variation-title="Pink"
+    data-price="500"
+>
+    Add to Cart
+</button>
+```
 
 ### Cart Item
 
@@ -32,23 +53,20 @@ aerostat_id             |int      |required.                                    
 ---|---|---|---
 product_title           |string   |required.                                                              	   |data-product-title
 ---|---|---|---
-product_variation_title |string   |required. for type item only                   	                           |data-product-variation-title
----|---|---|---
-price                   |int      |required. for type item                     	                               |data-price
+product_variation_title |string   |required for type item only                   	                           |data-product-variation-title
 ---|---|---|---
 id                      |int      |required. variation id or plan id                 	                       |data-id
 ---|---|---|---
-price[usd]              |int      |required for type item               	                                   |data-price
+price[usd]              |int      |required             	                                                   |data-price
 ---|---|---|---
 quantity                |int      |optional. default is 1. can't be > 1 for type plan                     	   |data-quantity
 ---|---|---|---
 name                    |string   |required. for type plan                                                	   |data-name
 ---|---|---|---
-amount                  |string   |required                                          	                       |data-amount
----|---|---|---
 interval                |string   |required. for type plan                                                	   |data-interval
 ---|---|---|---
 interval_count          |int      |optional. default is 0                                                 	   |data-interval-count
+
 
 #### Misc Data
 
