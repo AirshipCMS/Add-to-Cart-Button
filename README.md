@@ -23,7 +23,7 @@ run `yarn build`
 this will build/minify the `src/app.js` to `dist/airship-add-to-cart-button.min.js`
 
 
-### Usage
+## Usage
 
 In your airship project, add `airship-add-to-cart-button.min.js` to `compartments/assets/scripts/`.
 
