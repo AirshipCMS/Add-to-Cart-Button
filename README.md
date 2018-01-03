@@ -27,9 +27,12 @@ this will build/minify the `src/app.js` to `dist/airship-add-to-cart-button.min.
 
 In your airship project, add `airship-add-to-cart-button.min.js` to `compartments/assets/scripts/`.
 
-Include this script to the pages that needs an Add to Cart Button(s).
+Include the script to the pages that needs an Add to Cart Button(s).
 
 Add the required data attributes to your button element.
+
+
+example:
 
 ```
 <button
@@ -41,6 +44,22 @@ Add the required data attributes to your button element.
 >
     Add to Cart
 </button>
+```
+This would save to localStorage as:
+
+```
+{
+  aerostat_id: 1,
+  id: 4,
+  product_title: "Sticker",
+  product_variation_title: "Pink",
+  price: {
+    usd: 500
+  }
+  quantity: 1
+  type: "item"
+  has_no_shipments: false
+}
 ```
 
 ### Cart Item
