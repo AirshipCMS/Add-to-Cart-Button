@@ -43,7 +43,7 @@
         name: dataset.name,
         interval: dataset.interval,
         interval_count: dataset.interval_count,
-        trial_days: dataset.trialDays || 0
+        trial_period_days: dataset.trialDays || 0
       },
       has_no_shipments: hasNoShipments || false
     }
