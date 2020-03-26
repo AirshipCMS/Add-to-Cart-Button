@@ -42,7 +42,7 @@
       product_plan: {
         name: dataset.name,
         interval: dataset.interval,
-        interval_count: dataset.interval_count,
+        interval_count: dataset.intervalCount,
         trial_period_days: dataset.trialDays || 0
       },
       has_no_shipments: hasNoShipments || false
