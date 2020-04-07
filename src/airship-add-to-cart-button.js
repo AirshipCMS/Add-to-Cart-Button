@@ -3,7 +3,6 @@
         cartCounter = document.getElementsByClassName("airship-nav-cart-counter"),
         requiredProductData = ['aerostatId', 'id', 'productTitle', 'productVariationTitle', 'price'],
         requiredPlanData = ['aerostatId', 'id', 'productTitle', 'name', 'price', 'interval'];
-  let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : { items: [] };
   
   Array.prototype.slice.call(addToCartButton).forEach((el) => el.onclick = validateDataset);
 
@@ -26,6 +25,7 @@
   }
 
   function addToCart(dataset) {
+    let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : { items: [] };
     let hasNoShipments;
     if(dataset.hasNoShipments) hasNoShipments = JSON.parse(dataset.hasNoShipments);
 
