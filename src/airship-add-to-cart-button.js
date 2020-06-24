@@ -26,8 +26,6 @@
 
   function addToCart(dataset) {
     let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : { items: [] };
-    let hasNoShipments;
-    if(dataset.hasNoShipments) hasNoShipments = JSON.parse(dataset.hasNoShipments);
 
     let cartItem = {
       aerostat_id: dataset.aerostatId,
@@ -45,7 +43,7 @@
         interval_count: dataset.intervalCount,
         trial_period_days: dataset.trialDays || 0
       },
-      has_no_shipments: hasNoShipments || false
+      has_shipments: dataset.hasShipments
     }
 
     let misc_data = {};
