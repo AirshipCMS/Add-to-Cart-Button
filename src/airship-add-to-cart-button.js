@@ -43,7 +43,7 @@
         interval_count: dataset.intervalCount,
         trial_period_days: dataset.trialDays || 0
       },
-      has_shipments: dataset.hasShipments
+      has_shipments: dataset.hasShipments ? JSON.parse(dataset.hasShipments) : true
     }
 
     let misc_data = {};
